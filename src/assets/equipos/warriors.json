@@ -1,7 +1,7 @@
 {"Equipo": "Warriors",
 "Jugadores":
     [
-    {"name":"Curry", "numero":"30","img":"curry.png"     ,"pts":0,"faltas":0   },  
+    {"name":"Stephen", "numero":"30","img":"curry.png"     ,"pts":0,"faltas":0   },  
     {"name":"Green", "numero":"23","img":"green.png"     ,"pts":0,"faltas":0   }, 
     {"name":"Iguadala", "numero":"9","img":"iguadala.png","pts":0,"faltas":0   },  
     {"name":"Klay", "numero":"11","img":"klay.png"       ,"pts":0,"faltas":0   },
