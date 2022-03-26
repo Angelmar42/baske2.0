@@ -1,0 +1,37 @@
+.centrado{
+    text-align: center;
+  }
+.nombre{
+  font-size: 150%;
+}
+
+.jugador {
+  height: 150px !important;
+  width: auto !important;
+  align-items: center;
+  
+  }
+  
+  
+  
+
+.input {
+  background-color: rgba(255, 166, 0, 0.623);
+  text-align: center;
+}
+
+.acumulados {
+  background-color: rgba(255, 0, 0, 0.726);
+  text-align: center;
+}
+
+ion-card{
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+ion-action-sheet{
+  justify-content: flex-start;
+  }

@@ -1,0 +1,84 @@
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row >
+      <ion-col *ngFor="let item of equipo1; index as j">
+        <ion-card (click)=" presentActionSheet(0,j)">
+          <ion-card-header class="centrado">
+            <ion-card-title class="nombre">
+                  #{{item.numero}} {{item.name}}
+                </ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content class="centrado">
+
+            <ion-img class="jugador" src="/assets/img/jugadores/{{item.img}}"></ion-img>
+            {{item.pts}} puntos<br>{{item.faltas}} Faltas
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)=" presentActionSheet()">
+          <ion-card-header class="centrado">
+            <ion-card-subtitle>12</ion-card-subtitle>
+            <ion-card-title>06:35</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card >
+          <ion-card-header class="centrado">
+            <ion-card-subtitle>Marcador</ion-card-subtitle>
+            <ion-card-title>{{local}}  -  {{visitante}}</ion-card-title>
+            
+          </ion-card-header>
+        
+          <ion-card-content>
+            
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col >
+        <ion-card  (click)=" presentActionSheet()">
+          <ion-card-header class="centrado">
+            <ion-card-subtitle>Faltas de equipo</ion-card-subtitle>
+            <ion-card-title>
+            
+              <ion-col [ngClass]="{'input':  faltaslocal===4,'acumulados':  faltaslocal>4}">{{faltaslocal}}</ion-col>
+              <ion-col>-</ion-col>
+              <ion-col [ngClass]="{'input':  faltasvisitante===4,'acumulados':  faltasvisitante>4}">{{faltasvisitante}}</ion-col>  
+             </ion-card-title>
+            </ion-card-header>
+        
+          <ion-card-content>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row >
+      <ion-col *ngFor="let item of equipo2; index as i">
+        <ion-card (click)=" presentActionSheet(1,i)">
+          <ion-card-header class="centrado">
+            <ion-card-title class="nombre">
+                  #{{item.numero}} {{item.name}}
+                </ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content class="centrado">
+
+            <ion-img class="jugador" src="/assets/img/jugadores/{{item.img}}"></ion-img>{{item.pts}} puntos<br>{{item.faltas}} Faltas
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    </ion-grid>
+</ion-content>

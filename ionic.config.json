@@ -1,0 +1,7 @@
+{
+  "name": "baske",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
