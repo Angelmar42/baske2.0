@@ -1,5 +1,3 @@
-
-
 <ion-content>
   <ion-grid>
     <ion-row >
@@ -7,14 +5,14 @@
         <ion-card (click)=" presentActionSheet(0,j)">
           <ion-card-header class="centrado">
             <ion-card-title class="nombre">
-                  #{{item.numero}} {{item.name}}
+                  #{{item.numero}} {{item.nams}}
                 </ion-card-title>
           </ion-card-header>
         
           <ion-card-content class="centrado">
 
             <ion-img class="jugador" src="/assets/img/jugadores/{{item.img}}"></ion-img>
-            {{item.pts}} puntos<br>{{item.faltas}} Faltas
+          <ion-label [ngClass]="{'input':  item.faltas===4,'acumulados':  item.faltas>4}" >  {{item.pts}} puntos<br>{{item.faltas}} Faltas</ion-label>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -74,7 +72,7 @@
         
           <ion-card-content class="centrado">
 
-            <ion-img class="jugador" src="/assets/img/jugadores/{{item.img}}"></ion-img>{{item.pts}} puntos<br>{{item.faltas}} Faltas
+            <ion-img class="jugador" src="/assets/img/jugadores/{{item.img}}"></ion-img><ion-label [ngClass]="{'input':  item.faltas===4,'acumulados':  item.faltas>4}" >{{item.pts}} puntos<br>{{item.faltas}} Faltas</ion-label>
           </ion-card-content>
         </ion-card>
       </ion-col>
