@@ -1,0 +1,15 @@
+{"Equipo": "Nets",
+    "Jugadores":[
+    {"name":"Blake", "numero":"2","img":"blake.png"         ,"pts":0,"faltas":0},  
+    {"name":"Durant", "numero":"7","img":"durant.png"       ,"pts":0,"faltas":0}, 
+    {"name":"Kyrie", "numero":"11","img":"kyrie.png"        ,"pts":0,"faltas":0},  
+    {"name":"Mills", "numero":"8","img":"mills.png"         ,"pts":0,"faltas":0},
+    {"name":"Seth", "numero":"30","img":"seth.png"          ,"pts":0,"faltas":0},  
+    {"name":"Simmons", "numero":"10","img":"simmons.png"    ,"pts":0,"faltas":0},  
+    {"name":"Aldrige", "numero":"21","img":"aldrige.png"    ,"pts":0,"faltas":0},
+    {"name":"Harris","numero": "12","img":"harris.png"      ,"pts":0,"faltas":0},
+    {"name":"Dragic","numero": "9","img":"dragic.png"       ,"pts":0,"faltas":0},
+    {"name":"Johnson","numero": "16","img":"johnson.png"    ,"pts":0,"faltas":0}  ]
+
+
+}
