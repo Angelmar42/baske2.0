@@ -1,0 +1,15 @@
+{"Equipo": "Pinguinos",
+    "Jugadores":[
+    {"name":"Angel",    "numero":"8",   "img":"blake.png"           ,"pts":0,"faltas":0,"reb":0,"ast":0},  
+    {"name":"Omar",   "numero":"0",   "img":"durant.png"          ,"pts":0,"faltas":0,"reb":0,"ast":0}, 
+    {"name":"Martin",    "numero":"4",  "img":"kyrie.png"           ,"pts":0,"faltas":0,"reb":0,"ast":0},  
+    {"name":"Obed",    "numero":"17",   "img":"mills.png"           ,"pts":0,"faltas":0,"reb":0,"ast":0},
+    {"name":"Emir",     "numero":"35",  "img":"seth.png"            ,"pts":0,"faltas":0,"reb":0,"ast":0},  
+    {"name":"Cache",  "numero":"20",  "img":"simmons.png"         ,"pts":0,"faltas":0,"reb":0,"ast":0},  
+    {"name":"Yax",  "numero":"6",  "img":"aldrige.png"         ,"pts":0,"faltas":0,"reb":0,"ast":0},
+    {"name":"Pikins",   "numero": "10", "img":"harris.png"          ,"pts":0,"faltas":0,"reb":0,"ast":0},
+    {"name":"Loko",   "numero": "18",  "img":"dragic.png"          ,"pts":0,"faltas":0,"reb":0,"ast":0},
+    {"name":"Chino",  "numero": "9", "img":"johnson.png"         ,"pts":0,"faltas":0,"reb":0,"ast":0}  ]
+
+
+}

@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+
 let a:any;
 let alphas:string[];
 let betas:string[];
-
-
+let nombre1:any;
+let nombre2:any;
+let iniciales: string[];
+iniciales=["warriors","pinguinos"]
 @Component({
   selector: 'app-anotacion',
   templateUrl: './anotacion.page.html',
   styleUrls: ['./anotacion.page.scss'],
 })
 export class AnotacionPage implements OnInit {
+
   local: number = 0;
   faltaslocal: number = 0;
   visitante: number = 0;
@@ -29,9 +34,9 @@ export class AnotacionPage implements OnInit {
   cambio: number=0;
   z: any;
   
-  constructor(public actionSheetController: ActionSheetController, public actionSheetController2: ActionSheetController) { }
+  constructor(public alertController: AlertController, public actionSheetController: ActionSheetController, public actionSheetController2: ActionSheetController) { }
   
-  
+
   async presentActionSheet(equipo,jugador) {
 
     const actionSheet = await this.actionSheetController.create({
@@ -130,11 +135,19 @@ export class AnotacionPage implements OnInit {
           {
             this.faltaslocal += 1;
             this.equipo1[jugador]['faltas']+=1;
+          if(this.faltaslocal==4){this.acumulados(equipo);}
+          if(this.faltaslocal>4){this.bonus(equipo);}
+          if(this.equipo1[jugador]['faltas']==4){this.faltas(equipo,jugador);}
+          if(this.equipo1[jugador]['faltas']==5){this.Expulsado(equipo,jugador);}
           }
           if (equipo==1) 
           {
             this.faltasvisitante +=1;
             this.equipo2[jugador]['faltas']+=1;
+            if(this.faltasvisitante==4){this.acumulados(equipo);}
+            if(this.faltasvisitante>4){this.bonus(equipo);}
+            if(this.equipo2[jugador]['faltas']==4){this.faltas(equipo,jugador);}
+            if(this.equipo2[jugador]['faltas']==5){this.Expulsado(equipo,jugador);}
           }
           
         }
@@ -166,8 +179,9 @@ export class AnotacionPage implements OnInit {
   
   ngOnInit() {
     
-    fetch('./assets/equipos/nets.json').then(res => res.json())
+    fetch('./assets/equipos/'+iniciales[1]+'.json').then(res => res.json())
     .then(json => {
+      nombre1=json['Equipo']
       this.c = json['Jugadores']
       betas=[this.c[5],this.c[6],this.c[7],this.c[8],this.c[9]];
       this.d=[this.c[0],this.c[1],this.c[2],this.c[3],this.c[4]]
@@ -175,12 +189,10 @@ export class AnotacionPage implements OnInit {
 
 
     });
-    fetch('./assets/equipos/warriors.json').then(res => res.json())
+    fetch('./assets/equipos/'+iniciales[0]+'.json').then(res => res.json())
     .then(json => {
+      nombre2=json['Equipo']
       a=json['Jugadores']   
-      
-      
-
       alphas=[a[5],a[6],a[7],a[8],a[9]];
       this.b=[a[0],a[1],a[2],a[3],a[4]]
       this.equipo2 =this.b;
@@ -368,6 +380,115 @@ export class AnotacionPage implements OnInit {
     
 }
 
+  async acumulados(equipo) {
+    const alert = await this.alertController.create({
+      //cssClass: 'my-custom-class',
+      header: 'Acumulados',
+      message: nombreequipo(equipo),
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+   
+  }
+  async bonus(equipo) {
+    const alert = await this.alertController.create({
+      //cssClass: 'my-custom-class',
+      header: 'Tiros libres por acumulados',
+      message: 'Hay tiros por acumulados',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+   
+  }
+  async faltas(equipo,jugador) {
+    const alert = await this.alertController.create({
+      //cssClass: 'my-custom-class',
+      header: 'Faltas personales',
+      message: "Jugador con 4 faltas",
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+   
+  }
+  async Expulsado(equipo,jugador) {
+    const alert = await this.alertController.create({
+      //cssClass: 'my-custom-class',
+      header: 'Expulsado',
+      message: "Jugador expulsado",
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+   
+  }
+
+
+  async seleccion() {
+
+    const actionSheet2 = await this.actionSheetController2.create(
+    
+      {
+      header: 'Equipos a jugar',
+      cssClass: 'my-custom-class',
+      buttons: [
+      {
+        
+        text: 'Warriors',
+        icon: 'accessibility',
+        handler: () => {
+                
+        }
+      },
+      {
+        
+        text: 'Lakers',
+        icon: 'accessibility',
+        handler: () => {
+          return("lakers");       }
+      },
+      {
+        
+        text: 'Pinguinos',
+        icon: 'accessibility',
+        handler: () => {
+          return("warriors");
+        }
+      },
+      {
+        
+        text: 'Nets',
+        icon: 'accessibility',
+        handler: () => {
+          return("nets");
+        }
+      }
+    ]
+    });
+
+
+    await actionSheet2.present();
+
+    const { role, data } = await actionSheet2.onDidDismiss();
+    
+
+    
+}
+
+
+
+
+
 
 }
 
@@ -383,6 +504,21 @@ function name(equipo, jugador) {
 
   }
 
+
 }
 
+
+
+function nombreequipo(equipo) {
+  if (equipo ==0){
+    return (nombre1)
+
+  }
+
+  if (equipo ==1){
+    return (nombre2)
+  }
+
+
+}
 
