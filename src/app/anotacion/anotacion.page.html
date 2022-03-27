@@ -1,5 +1,13 @@
 <ion-content>
-  <ion-grid>
+  <ion-segment  [value]="Valor" (ionChange)="segmentChanged($event)" >
+    <ion-segment-button class="cajasegmento" value="1">
+      <ion-label class="segmento">Juego</ion-label>
+    </ion-segment-button>
+    <ion-segment-button class="cajasegmento" value="2">
+      <ion-label class="segmento">Caja de anotación</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-grid *ngIf="Valor==1">
     <ion-row >
       <ion-col *ngFor="let item of equipo2; index as i">
         <ion-card (click)=" presentActionSheet(1,i)">
@@ -110,4 +118,47 @@ RELOJ
     
     
     </ion-grid>
+    <ion-grid *ngIf="Valor==2" class="box">
+      <label class="bold">LOCAL</label>
+      <ion-row class="bold"><ion-col>Numero</ion-col>
+      <ion-col>Jugador</ion-col>
+      <ion-col>Puntos</ion-col>
+      <ion-col>Rebotes</ion-col>
+      <ion-col>Asistencias</ion-col>
+      <ion-col>Faltas</ion-col>
+    </ion-row>
+        <ion-row *ngFor="let item of c; index as i" [ngClass]="{'input':  item.faltas===4,'acumulados':  item.faltas>4}" >
+          <ion-col>#{{item.numero}}</ion-col> <ion-col> {{item.name}}</ion-col>
+             <ion-col>{{item.pts}}</ion-col>
+             <ion-col>{{item.reb}}</ion-col>
+             <ion-col>{{item.ast}}</ion-col>
+             <ion-col>{{item.faltas}}</ion-col>
+          
+                 </ion-row>
+      
+  
+  
+              <br><label class="bold">VISITANTE</label>
+              
+              <ion-row class="bold"><ion-col>Numero</ion-col>
+                 <ion-col>Jugador</ion-col>
+                 <ion-col>Puntos</ion-col>
+                 <ion-col>Rebotes</ion-col>
+                 <ion-col>Asistencias</ion-col>
+                 <ion-col>Faltas</ion-col>
+               </ion-row>
+                   <ion-row *ngFor="let item of a; index as j" [ngClass]="{'input':  item.faltas===4,'acumulados':  item.faltas>4}" >
+                     <ion-col>#{{item.numero}}</ion-col> <ion-col> {{item.name}}</ion-col>
+                        <ion-col>{{item.pts}}</ion-col>
+                        <ion-col>{{item.reb}}</ion-col>
+                        <ion-col>{{item.ast}}</ion-col>
+                        <ion-col>{{item.faltas}}</ion-col>
+                     
+                            </ion-row>
+                 
+             
+             
+             
+ 
+                </ion-grid>
 </ion-content>

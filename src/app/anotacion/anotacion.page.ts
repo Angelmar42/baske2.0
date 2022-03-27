@@ -2,20 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
-let a:any;
+
 let alphas:string[];
 let betas:string[];
 let nombre1:any;
 let nombre2:any;
 let iniciales: string[];
-iniciales=["warriors","pinguinos"]
+iniciales=["warriors","nets"]
 @Component({
   selector: 'app-anotacion',
   templateUrl: './anotacion.page.html',
   styleUrls: ['./anotacion.page.scss'],
 })
 export class AnotacionPage implements OnInit {
-
+  a:any;
   local: number = 0;
   faltaslocal: number = 0;
   visitante: number = 0;
@@ -33,7 +33,8 @@ export class AnotacionPage implements OnInit {
   elegido: number;
   cambio: number=0;
   z: any;
-  
+  Valor: string="1";
+    
   constructor(public alertController: AlertController, public actionSheetController: ActionSheetController, public actionSheetController2: ActionSheetController) { }
   
 
@@ -47,7 +48,7 @@ export class AnotacionPage implements OnInit {
         icon: 'Basketball',
         id: 'delete-button',
         data: {
-          type: 'delete'
+          txype: 'delete'
         },
         handler: () => {
           if (equipo==0) 
@@ -142,6 +143,7 @@ export class AnotacionPage implements OnInit {
           }
           if (equipo==1) 
           {
+            
             this.faltasvisitante +=1;
             this.equipo2[jugador]['faltas']+=1;
             if(this.faltasvisitante==4){this.acumulados(equipo);}
@@ -179,7 +181,8 @@ export class AnotacionPage implements OnInit {
   
   ngOnInit() {
     
-    fetch('./assets/equipos/'+iniciales[1]+'.json').then(res => res.json())
+    
+    fetch('./assets/equipos/'+iniciales[0]+'.json').then(res => res.json())
     .then(json => {
       nombre1=json['Equipo']
       this.c = json['Jugadores']
@@ -189,19 +192,24 @@ export class AnotacionPage implements OnInit {
 
 
     });
-    fetch('./assets/equipos/'+iniciales[0]+'.json').then(res => res.json())
+    fetch('./assets/equipos/'+iniciales[1]+'.json').then(res => res.json())
     .then(json => {
       nombre2=json['Equipo']
-      a=json['Jugadores']   
-      alphas=[a[5],a[6],a[7],a[8],a[9]];
-      this.b=[a[0],a[1],a[2],a[3],a[4]]
+      this.a=json['Jugadores']   
+      alphas=[this.a[5],this.a[6],this.a[7],this.a[8],this.a[9]];
+      this.b=[this.a[0],this.a[1],this.a[2],this.a[3],this.a[4]]
       this.equipo2 =this.b;
 
 
     });
 
 
+
   }
+  segmentChanged(event:CustomEvent){
+    this.Valor=event.detail.value;
+  }
+
   async cambios(equipo,jugador) {
 
     const actionSheet2 = await this.actionSheetController2.create(
@@ -433,57 +441,6 @@ export class AnotacionPage implements OnInit {
    
   }
 
-
-  async seleccion() {
-
-    const actionSheet2 = await this.actionSheetController2.create(
-    
-      {
-      header: 'Equipos a jugar',
-      cssClass: 'my-custom-class',
-      buttons: [
-      {
-        
-        text: 'Warriors',
-        icon: 'accessibility',
-        handler: () => {
-                
-        }
-      },
-      {
-        
-        text: 'Lakers',
-        icon: 'accessibility',
-        handler: () => {
-          return("lakers");       }
-      },
-      {
-        
-        text: 'Pinguinos',
-        icon: 'accessibility',
-        handler: () => {
-          return("warriors");
-        }
-      },
-      {
-        
-        text: 'Nets',
-        icon: 'accessibility',
-        handler: () => {
-          return("nets");
-        }
-      }
-    ]
-    });
-
-
-    await actionSheet2.present();
-
-    const { role, data } = await actionSheet2.onDidDismiss();
-    
-
-    
-}
 
 
 
