@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 let a:any;
 let alphas:string[];
-let betas:string[];  
+let betas:string[];
+
 
 @Component({
   selector: 'app-anotacion',
@@ -35,6 +36,7 @@ export class AnotacionPage implements OnInit {
 
     const actionSheet = await this.actionSheetController.create({
       header: 'Acciones',
+      cssClass: 'my-custom-class',
       buttons: [{
         text: '+1',
         icon: 'Basketball',
