@@ -231,7 +231,7 @@ export class AnotacionPage implements OnInit {
         text: name(equipo,2),
         icon: 'accessibility',
         handler: () => {
-          this.elegido=0;
+          this.elegido=2;
           if (equipo==0){ 
             this.auxiliar=[this.d[jugador],betas[this.elegido]];
             this.d[jugador]=this.auxiliar[1];
@@ -261,7 +261,7 @@ export class AnotacionPage implements OnInit {
         text: name(equipo,3),
         icon: 'accessibility',
         handler: () => {
-          this.elegido=0;
+          this.elegido=3;
           if (equipo==0){ 
             this.auxiliar=[this.d[jugador],betas[this.elegido]];
             this.d[jugador]=this.auxiliar[1];
@@ -291,7 +291,7 @@ export class AnotacionPage implements OnInit {
         text: name(equipo,4),
         icon: 'accessibility',
         handler: () => {
-          this.elegido=0;
+          this.elegido=4;
           if (equipo==0){ 
             this.auxiliar=[this.d[jugador],betas[this.elegido]];
             this.d[jugador]=this.auxiliar[1];
