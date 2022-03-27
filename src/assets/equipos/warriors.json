@@ -1,13 +1,13 @@
 {"Equipo": "Warriors",
 "Jugadores":
     [
-    {"name":"Curry", "numero":"30","img":"curry.png"     ,"pts":0,"faltas":0   },  
-    {"name":"Green", "numero":"23","img":"green.png"     ,"pts":0,"faltas":0   }, 
-    {"name":"Iguadala", "numero":"9","img":"iguadala.png","pts":0,"faltas":0   },  
-    {"name":"Klay", "numero":"11","img":"klay.png"       ,"pts":0,"faltas":0   },
-    {"name":"Poole", "numero":"3","img":"pole.png"       ,"pts":0,"faltas":0   },  
-    {"name":"Wiggins", "numero":"22","img":"wiggins.png" ,"pts":0,"faltas":0   },
-    {"name":"Otto","numero": "32","img":"otto.png"       ,"pts":0,"faltas":0   },
-    {"name":"Wiseman","numero": "33","img":"wiseman.png" ,"pts":0,"faltas":0   },
-    {"name":"Toscano","numero": "95","img":"toscano.png" ,"pts":0,"faltas":0   },
-    {"name":"Looney","numero": "5","img":"looney.png"    ,"pts":0,"faltas":0   }]}
+    {"name":"Curry", "numero":"30","img":"curry.png"     ,"pts":0,"faltas":0,"reb":0,"ast":0   },  
+    {"name":"Green", "numero":"23","img":"green.png"     ,"pts":0,"faltas":0,"reb":0,"ast":0   }, 
+    {"name":"Iguadala", "numero":"9","img":"iguadala.png","pts":0,"faltas":0,"reb":0,"ast":0   },  
+    {"name":"Klay", "numero":"11","img":"klay.png"       ,"pts":0,"faltas":0,"reb":0,"ast":0   },
+    {"name":"Poole", "numero":"3","img":"pole.png"       ,"pts":0,"faltas":0,"reb":0,"ast":0   },  
+    {"name":"Wiggins", "numero":"22","img":"wiggins.png" ,"pts":0,"faltas":0,"reb":0,"ast":0   },
+    {"name":"Otto","numero": "32","img":"otto.png"       ,"pts":0,"faltas":0,"reb":0,"ast":0   },
+    {"name":"Wiseman","numero": "33","img":"wiseman.png" ,"pts":0,"faltas":0,"reb":0,"ast":0   },
+    {"name":"Toscano","numero": "95","img":"toscano.png" ,"pts":0,"faltas":0,"reb":0,"ast":0   },
+    {"name":"Looney","numero": "5","img":"looney.png"    ,"pts":0,"faltas":0,"reb":0,"ast":0   }]}

@@ -89,6 +89,38 @@ export class AnotacionPage implements OnInit {
           }
           
         }
+      },
+      {
+        text: 'Rebote',
+        icon: 'Basketball',
+        data: 'Data value',
+        handler: () => {
+          if (equipo==0) 
+          {
+            this.equipo1[jugador]['reb']+=1;
+          }
+          if (equipo==1) 
+          {
+            this.equipo2[jugador]['reb']+=1;
+          }
+          
+        }
+      },
+      {
+        text: 'Asistencia',
+        icon: 'Basketball',
+        data: 'Data value',
+        handler: () => {
+          if (equipo==0) 
+          {
+            this.equipo1[jugador]['ast']+=1;
+          }
+          if (equipo==1) 
+          {
+            this.equipo2[jugador]['ast']+=1;
+          }
+          
+        }
       }, {
         text: 'Falta',
         role: 'destructive',

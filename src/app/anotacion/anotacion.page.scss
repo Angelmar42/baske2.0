@@ -1,10 +1,19 @@
 .centrado{
     text-align: center;
+    align-items: center;
+    vertical-align: middle;
   }
-.nombre{
+.nombreabajo{
   font-size: 150%;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
+.nombre{
+  font-size: 150%;
+  text-align: center;
+  margin-bottom: 15px;
+}
 .jugador {
   height: 150px !important;
   width: auto !important;
