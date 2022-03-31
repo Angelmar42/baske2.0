@@ -1,6 +1,6 @@
 {"Equipo": "Pinguinos",
     "Jugadores":[
-    {"name":"Angel",    "numero":"8",   "img":"blake.png"           ,"pts":0,"faltas":0,"reb":0,"ast":0},  
+    {"name":"Angel",    "numero":"8",   "img":"angel.jpg"           ,"pts":0,"faltas":0,"reb":0,"ast":0},  
     {"name":"Omar",   "numero":"0",   "img":"durant.png"          ,"pts":0,"faltas":0,"reb":0,"ast":0}, 
     {"name":"Martin",    "numero":"4",  "img":"kyrie.png"           ,"pts":0,"faltas":0,"reb":0,"ast":0},  
     {"name":"Obed",    "numero":"17",   "img":"mills.png"           ,"pts":0,"faltas":0,"reb":0,"ast":0},

@@ -8,7 +8,7 @@ let betas:string[];
 let nombre1:any;
 let nombre2:any;
 let iniciales: string[];
-iniciales=["warriors","nets"]
+iniciales=["warriors","pinguinos"]
 @Component({
   selector: 'app-anotacion',
   templateUrl: './anotacion.page.html',
