@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
-
+let tiempo: Date;
 let alphas:string[];
 let betas:string[];
 let nombre1:any;
@@ -37,6 +37,12 @@ export class AnotacionPage implements OnInit {
     
   constructor(public alertController: AlertController, public actionSheetController: ActionSheetController, public actionSheetController2: ActionSheetController) { }
   
+  
+  
+  timer() {
+    tiempo = new Date()
+    return (tiempo);
+   }
 
   async presentActionSheet(equipo,jugador) {
 
@@ -442,12 +448,11 @@ export class AnotacionPage implements OnInit {
   }
 
 
-
-
-
+  
 
 
 }
+
 
 
 function name(equipo, jugador) {
@@ -476,6 +481,8 @@ function nombreequipo(equipo) {
     return (nombre2)
   }
 
+  
 
 }
+
 

@@ -55,16 +55,18 @@
         </ion-card>
       </ion-col>
       <ion-col>
+        <div *ngIf="1 === 1">
         <ion-card class="centrado">
+          
           <ion-card-header >
-            <ion-card-subtitle>Tiempo restante</ion-card-subtitle>
-
+            <ion-card-subtitle>Reloj</ion-card-subtitle>
+                
           </ion-card-header>
-        
+          {{timer()}}
           <ion-card-content>
-RELOJ
+           
           </ion-card-content>
-        </ion-card>
+        </ion-card></div>
       </ion-col>
       <ion-col>
         <ion-card  class="centrado">
@@ -119,7 +121,7 @@ RELOJ
     
     </ion-grid>
     <ion-grid *ngIf="Valor==2" class="box">
-      <label class="bold">LOCAL</label>
+      <label     class="bold">LOCAL</label>
       <ion-row class="bold"><ion-col>Numero</ion-col>
       <ion-col>Jugador</ion-col>
       <ion-col>Puntos</ion-col>
