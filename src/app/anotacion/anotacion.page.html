@@ -43,30 +43,29 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="centrado">
+        <ion-card class="centrado" (click)="tiempoTiro(5)">
           <ion-card-header >
             <ion-card-subtitle>Tiempo de tiro</ion-card-subtitle>
            
           </ion-card-header>
         
           <ion-card-content>
-          24
+            <b>--- {{maxTime}} ---</b>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col>
-        <div *ngIf="1 === 1">
-        <ion-card class="centrado">
+        
+        <ion-card   class="centrado">
           
           <ion-card-header >
-            <ion-card-subtitle>Reloj</ion-card-subtitle>
-                
+            <ion-card-subtitle>Reloj</ion-card-subtitle>   
           </ion-card-header>
-          ñlkñkñlkñkñlkñlkñlkñlkñkkñlk
+          
           <ion-card-content>
-           
+            Tiempo: 
           </ion-card-content>
-        </ion-card></div>
+        </ion-card>
       </ion-col>
       <ion-col>
         <ion-card  class="centrado">

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
 import { ActionSheetController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
-let tiempo: Date;
+
 let alphas:string[];
 let betas:string[];
 let nombre1:any;
@@ -23,7 +24,10 @@ export class AnotacionPage implements OnInit {
   equipo1: any;
   equipo2:any;
   nombre: any;
- 
+  tiempo: Date;
+  maxTime: any=0;
+  timer: any;
+
   
   b:any;
   
@@ -39,10 +43,6 @@ export class AnotacionPage implements OnInit {
   
   
   
-  timer() {
-    tiempo = new Date()
-    return (tiempo);
-   }
 
   async presentActionSheet(equipo,jugador) {
 
@@ -215,6 +215,22 @@ export class AnotacionPage implements OnInit {
   segmentChanged(event:CustomEvent){
     this.Valor=event.detail.value;
   }
+
+  tiempoTiro(a){
+
+    this.maxTime=a;
+    this.timer = setTimeout(x => 
+      {
+          
+          if(this.maxTime>0){
+            this.maxTime -= 1;
+            this.tiempoTiro(this.maxTime);
+          }
+
+      }, 1000);
+
+  }
+
 
   async cambios(equipo,jugador) {
 
@@ -448,7 +464,7 @@ export class AnotacionPage implements OnInit {
   }
 
 
-  
+
 
 
 }
@@ -483,6 +499,8 @@ function nombreequipo(equipo) {
 
   
 
+
 }
+
 
 
