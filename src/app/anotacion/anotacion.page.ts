@@ -3,7 +3,6 @@ import { waitForAsync } from '@angular/core/testing';
 import { ActionSheetController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
-
 let alphas:string[];
 let betas:string[];
 let nombre1:any;
@@ -25,8 +24,13 @@ export class AnotacionPage implements OnInit {
   equipo2:any;
   nombre: any;
   tiempo: Date;
-  maxTime: any=0;
+  maxTime: any=24;
+  avance: any=0;
+  Time: any=10;
+  mins: any=1;
+  segs: any=0;
   timer: any;
+  cuarto: number=1;
 
   
   b:any;
@@ -38,7 +42,8 @@ export class AnotacionPage implements OnInit {
   cambio: number=0;
   z: any;
   Valor: string="1";
-    
+  sigsaque: string="Saque inicial";
+  antsaque: number=0;
   constructor(public alertController: AlertController, public actionSheetController: ActionSheetController, public actionSheetController2: ActionSheetController) { }
   
   
@@ -225,12 +230,56 @@ export class AnotacionPage implements OnInit {
           if(this.maxTime>0){
             this.maxTime -= 1;
             this.tiempoTiro(this.maxTime);
+            
           }
 
       }, 1000);
 
   }
 
+  async Timmer(a,b){
+    this.mins= Math.trunc(this.Time/60);
+    this.segs=Math.round(((this.Time/60)-Math.trunc(this.Time/60))*60);
+    if (b==1)
+    {
+      this.avance=(this.avance+b)%2 
+    }
+
+    if (this.avance==1)
+    {
+    
+    this.Time=a;
+    this.timer = setTimeout(x => 
+      {
+          
+          if(this.Time>0){
+            this.Time -= 1;
+            if (this.Time==0)
+            { this.Time=600;
+              this.avance=0;
+              this.cuarto+=1;
+              this.cuartos()
+            }
+            else{
+            this.Timmer(this.Time,0);
+            }
+          }
+
+      }, 1000);
+    }
+ 
+  }
+
+  saque(){
+    if(this.antsaque==0){
+      this.sigsaque=nombre1;
+      this.antsaque=1;
+    }
+   else{
+      this.sigsaque=nombre2;
+      this.antsaque=0;
+    }
+  }
 
   async cambios(equipo,jugador) {
 
@@ -463,7 +512,17 @@ export class AnotacionPage implements OnInit {
    
   }
 
+  async cuartos() {
+    const alert = await this.alertController.create({
+      //cssClass: 'my-custom-class',
+      header: 'Cuarto terminado',
+      message: 'Inicia el siguiente cuarto',
+      buttons: ['OK']
+    });    await alert.present();
 
+    const { role } = await alert.onDidDismiss();
+   
+  }
 
 
 

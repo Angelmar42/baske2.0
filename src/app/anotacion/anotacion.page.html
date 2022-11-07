@@ -32,38 +32,39 @@
 
     <ion-row>
       <ion-col>
-        <ion-card class="centrado">
+        <ion-card class="centrado" (click)="saque()">
           <ion-card-header >
-            <ion-card-subtitle>Proximo saque</ion-card-subtitle>
+            <ion-card-subtitle >Proximo saque</ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content>
-            WARRIORS
+          <ion-card-content style="font-weight: bold;">
+            {{sigsaque}}
 
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="centrado" (click)="tiempoTiro(5)">
+        <ion-card class="centrado" (click)="tiempoTiro(24)">
           <ion-card-header >
             <ion-card-subtitle>Tiempo de tiro</ion-card-subtitle>
            
           </ion-card-header>
         
-          <ion-card-content>
+          <ion-card-content style="font-weight: bold;">
             <b>--- {{maxTime}} ---</b>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col>
         
-        <ion-card   class="centrado">
+        <ion-card   class="centrado" (click)="Timmer(Time,1)">
           
-          <ion-card-header >
-            <ion-card-subtitle>Reloj</ion-card-subtitle>   
+          <ion-card-header style="font-weight: bold;">
+            <ion-card-subtitle>Cuarto: {{cuarto}}</ion-card-subtitle>   
           </ion-card-header>
           
-          <ion-card-content>
-            Tiempo: 
+          <ion-card-content style="font-weight: bold;">
+            
+            Tiempo: {{mins}}:{{segs}}
           </ion-card-content>
         </ion-card>
       </ion-col>
