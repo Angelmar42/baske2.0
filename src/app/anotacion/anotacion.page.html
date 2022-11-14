@@ -43,15 +43,15 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="centrado" (click)="tiempoTiro(24)">
+        <ion-card class="centrado"  >
           <ion-card-header >
-            <ion-card-subtitle>Tiempo de tiro</ion-card-subtitle>
+            <ion-card-subtitle><b>--- {{maxTime}} ---</b></ion-card-subtitle>
+           <ion-button fill="outline" (click)="tiempoTiro(24,1)" > 24</ion-button>  
+           <ion-button fill="outline" (click)="tiempoTiro(maxTime,1)" > Pausa  </ion-button>
+           <ion-button fill="outline" (click)="tiempoTiro(14,1)"> 14</ion-button>
            
           </ion-card-header>
-        
-          <ion-card-content style="font-weight: bold;">
-            <b>--- {{maxTime}} ---</b>
-          </ion-card-content>
+
         </ion-card>
       </ion-col>
       <ion-col>

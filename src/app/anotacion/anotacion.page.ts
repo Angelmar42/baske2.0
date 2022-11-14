@@ -26,11 +26,13 @@ export class AnotacionPage implements OnInit {
   tiempo: Date;
   maxTime: any=24;
   avance: any=0;
-  Time: any=10;
-  mins: any=1;
+  Time: any=600;
+  mins: any=10;
   segs: any=0;
   timer: any;
+  timer2: any;
   cuarto: number=1;
+  stoptimer: any=0;
 
   
   b:any;
@@ -221,21 +223,19 @@ export class AnotacionPage implements OnInit {
     this.Valor=event.detail.value;
   }
 
-  tiempoTiro(a){
 
-    this.maxTime=a;
-    this.timer = setTimeout(x => 
-      {
-          
-          if(this.maxTime>0){
-            this.maxTime -= 1;
-            this.tiempoTiro(this.maxTime);
-            
-          }
 
-      }, 1000);
 
-  }
+
+
+
+
+
+
+
+
+
+
 
   async Timmer(a,b){
     this.mins= Math.trunc(this.Time/60);
@@ -263,6 +263,32 @@ export class AnotacionPage implements OnInit {
             else{
             this.Timmer(this.Time,0);
             }
+          }
+
+      }, 1000);
+    }
+ 
+  }
+  kill(){
+    this.tiempoTiro(0,0)
+  }
+tiempoTiro(a,b){
+  this.maxTime=a;
+    
+    if (b==1)
+    {
+      this.stoptimer=(this.stoptimer+b)%2;
+    }
+    
+    if (this.stoptimer==1)
+    {
+      
+    this.timer2 = setTimeout(y => 
+      {
+          
+          if(this.maxTime>0){
+            this.maxTime -= 1;
+            this.tiempoTiro(this.maxTime,0 );
           }
 
       }, 1000);
